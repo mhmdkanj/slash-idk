@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method="POST">{% csrf_token %}
-    {{shortener_form.as_p}}
-    <input type='submit' value='Save' />
-</form>
+<div class="container">
+<div class="row">
+    <div class="col">
+        <form method="POST">{% csrf_token %}
+            {{shortener_form.as_p}}
+            <input type='submit' value='Save' />
+        </form>
+    </div>
+    <div class="col">
 
+    </div>
+</div>
 <form action="/suggest/name" method="GET">
     <input type="submit" value="Suggest Name"> 
 </form>
+</div>
 {% endblock %}
