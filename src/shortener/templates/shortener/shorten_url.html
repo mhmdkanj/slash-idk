@@ -1,12 +1,8 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
-<form method="POST">{% csrf_token %}
-    {{shortener_form.as_p}}
-    <input type='submit' value='Save' />
-</form>
 
-<form action="/suggest/name" method="GET">
-    <input type="submit" value="Suggest Name"> 
-</form>
+{% crispy shortener_form %}
+
+
 {% endblock %}
