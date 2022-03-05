@@ -2,7 +2,14 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-{% crispy shortener_form %}
+<div class="row ustify-content-center mt-5">
+    <div class="col lg-8  d-flex justify-content-center">
+        <p class="lead">
+            Shorten your URLs with a click of a button.
+        </p>
+    </div>
+</div>
 
+{% crispy shortener_form %}
 
 {% endblock %}
