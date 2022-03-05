@@ -1,6 +1,6 @@
 # slash-idk
 
-`slash/idk` is a [Django](https://www.djangoproject.com/)-based web app that lets you run a simple local web server, where you can shorten long URLs with the name of your choice.
+`slash/idk` *(Slash, I don't know)* is a [Django](https://www.djangoproject.com/)-based web app that lets you run a simple local web server, where you can shorten long URLs with the name of your choice.
 
 By providing the desired name as a subdirectory to the server's domain name, the app redirects you to the original page mapped to this name.
 
