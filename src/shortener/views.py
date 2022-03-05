@@ -33,4 +33,7 @@ def get_random_name(n):
     return ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(n))
 
 def suggest_shortened_name_view(request, *args, **kwargs):
-    return create_shortened_url_view(request, suggestion=get_random_name(5), *args, **kwargs)
+    suggestion = get_random_name(5)
+    while Shortener.objects.filter(shortened=suggestion):
+        suggestion = get_random_name(5)
+    return create_shortened_url_view(request, suggestion=suggestion, *args, **kwargs)
