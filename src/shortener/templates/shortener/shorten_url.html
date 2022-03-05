@@ -1,28 +1,15 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
-<div class="container">
-<div class="row my-custom-row justify-content-center align-items-center mt-5">
-    <div class="col-lg-4">
-            {{shortener_form.original}}
-    </div>
-    <div class="col-lg-1 d-flex justify-content-center"><i class="bi-arrow-right-square-fill" style="font-size: 30px"></i></div>
-    <div class="col lg-2">http://localhost:8000/</div>
-    <div class="col-lg-3">{{shortener_form.shortened}}</div>
-    <div class="col-lg-2">
-        <form method="POST">{% csrf_token %}
-            <input type='submit' value='Save' />
-        </form>
-    </div>
-</div>
-<div class="row mt-3">
-    <div class="col-lg-7"></div>
-    <div class="col-lg-3">
+
+{% crispy shortener_form %}
+
+<div class="row justify-content-center align-items-center mt-3">
+    <div class="col-lg-3 d-flex justify-content-center">
         <form action="/suggest/name" method="GET">
-            <input type="submit" value="Suggest Name"> 
+            <input type="submit" class="btn btn-secondary" value="Suggest Name"> 
         </form>
     </div>
-    <div class="col-lg-2"></div>
 </div>
-</div>
+
 {% endblock %}
