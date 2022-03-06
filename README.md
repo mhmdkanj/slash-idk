@@ -54,6 +54,8 @@ python src/manage.py runserver
 Most probably, the web server will use port `8000` (otherwise, check the output of the previous command).
 If that's the case, then you can open the app by inputting the following URL in your web browser: [http://localhost:8000/](http://localhost:8000/)
 
+### Shortening a URL
+
 To add a mapping:
 1. Paste your URL in the first field
 2. Enter a short name in the second field
@@ -67,5 +69,15 @@ The next time you want to visit this site, you can then enter in your browser:
 `http://localhost:8000/ggl`, which redirects you to `http://google.com`.
 
 You can also press `"Suggest Name"` to suggest a randomly generated shortened name for the URL.
+
+### Displaying Saved URLs
+
+Click on `"My URLs"` on the navigation bar to list all saved shortened URLs.
+
+You can also choose to delete any of them by clicking on the button next to the desired entry.
+
+![My URLs](img/my_urls.png)
+
+### Quitting the Server
 
 To quit the server, press `Ctrl`+`C` within the terminal the server was launched from.

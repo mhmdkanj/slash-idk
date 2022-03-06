@@ -2,7 +2,7 @@ import string
 import random
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
-from django.views.generic import ListView
+from django.views.generic import ListView, DeleteView
 from .models import Shortener
 from .forms import ShortenerForm
 
@@ -42,3 +42,13 @@ def suggest_shortened_name_view(request, *args, **kwargs):
 class ShortenerListView(ListView):
     template_name = "shortener/shortener_list.html"
     queryset = Shortener.objects.all()
+
+class ShortenerDeleteView(DeleteView):
+    template_name = "shortener/shortener_delete.html"
+
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Shortener, id=id_)
+
+    def get_success_url(self):
+        return reverse("shortener:shortener-list")

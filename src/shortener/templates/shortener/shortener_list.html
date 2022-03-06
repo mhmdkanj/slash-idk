@@ -18,6 +18,7 @@
                 <th class="col-lg-1" scope="col">#</th>
                 <th class="col-lg-5" scope="col">Actual URL</th>
                 <th class="col-lg-3" scope="col">Shortened URL</th>
+                <th class="col-lg-1" scope="col">Delete?</th>
             </tr>
             </thead>
             <tbody>
@@ -26,6 +27,7 @@
                 <th scope="row">{{ instance.id }}</th>
                 <td><a href="{{ instance.original }}">{{ instance.original }}</a></td>
                 <td>{{ instance.shortened }}</td>
+                <td><button type="button" class="btn btn-outline-danger" onclick="location.href='/{{ instance.id }}/delete/'">X</button></td>
             </tr>
             {% endfor %}
             </tbody>
