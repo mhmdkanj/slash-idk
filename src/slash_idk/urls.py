@@ -20,3 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("shortener.urls")),
 ]
+
+handler404 = "slash_idk.views.page_not_found_view"
+handler400 = "slash_idk.views.bad_request_view"
+handler403 = "slash_idk.views.permission_denied_view"
+handler500 = "slash_idk.views.server_error_view"
