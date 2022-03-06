@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-lg-8">
+        <form action="." method="POST">{% csrf_token %}
+            <h2>Are you sure you want to delete the shortened URL "{{ object.shortened }}" ?</h2>
+            <div class="col-lg-3 mt-3">
+                <input class="btn btn-primary" type="submit" value="  Yes  "/>
+                <a class="btn btn-secondary" href="/my/urls/" role="button">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
