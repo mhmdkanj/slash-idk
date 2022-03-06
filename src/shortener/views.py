@@ -17,7 +17,7 @@ def create_shortened_url_view(request, suggestion=None, *args, **kwargs):
     if shortener_form.is_valid():
         shortener_form.save()
         # shortener_form = ShortenerForm()
-        return redirect(reverse("create-shortened-url"))
+        return redirect(reverse("shortener:create-shortened-url"))
     else:
         print(shortener_form.errors)
     
