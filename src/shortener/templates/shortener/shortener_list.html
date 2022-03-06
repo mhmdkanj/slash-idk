@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-lg-8">
+        <p class="lead">
+            List of shortened URL's saved:
+        </p>
+    </div>
+</div>
+
+<div class="row justify-content-center mt-5">
+    <div class="col-lg-9 d-flex justify-content-center">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th class="col-lg-1" scope="col">#</th>
+                <th class="col-lg-5" scope="col">Actual URL</th>
+                <th class="col-lg-3" scope="col">Shortened URL</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for instance in object_list %}
+            <tr>
+                <th scope="row">{{ instance.id }}</th>
+                <td><a href="{{ instance.original }}">{{ instance.original }}</a></td>
+                <td>{{ instance.shortened }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

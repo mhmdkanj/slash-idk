@@ -2,6 +2,7 @@ import string
 import random
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
+from django.views.generic import ListView
 from .models import Shortener
 from .forms import ShortenerForm
 
@@ -37,3 +38,7 @@ def suggest_shortened_name_view(request, *args, **kwargs):
     while Shortener.objects.filter(shortened=suggestion):
         suggestion = get_random_name(5)
     return create_shortened_url_view(request, suggestion=suggestion, *args, **kwargs)
+
+class ShortenerListView(ListView):
+    template_name = "shortener/shortener_list.html"
+    queryset = Shortener.objects.all()
