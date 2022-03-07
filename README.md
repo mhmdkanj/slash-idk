@@ -38,7 +38,6 @@ pip install -r requirements.txt
 Just for the first time, it is required to set up the database used by the web app (or at least make sure it's okay) by just running the following Django commands:
 
 ```sh
-cd src
 python src/manage.py makemigrations
 python src/manage.py migrate
 ```
@@ -68,7 +67,7 @@ For instance, if typing out `http://google.com` tires you, and you would rather 
 The next time you want to visit this site, you can then enter in your browser:
 `http://localhost:8000/ggl`, which redirects you to `http://google.com`.
 
-You can also press `"Suggest Name"` to suggest a randomly generated shortened name for the URL.
+You can also click on `"Suggest Name"` to suggest a randomly generated shortened name for the URL.
 
 ### Displaying Saved URLs
 
